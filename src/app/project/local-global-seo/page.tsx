@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import ComingSoon from '@/components/sections/ComingSoon';
+import ProjectPage from '@/components/templates/ProjectPage';
+import { getProject } from '@/content/projects';
 
-export const metadata: Metadata = { title: 'Local Global SEO' };
+const project = getProject('local-global-seo')!;
+
+export const metadata: Metadata = { title: project.title, description: project.summary };
 
 export default function Page() {
-  return <ComingSoon title={'Local Global SEO'} />;
+  return <ProjectPage project={project} />;
 }

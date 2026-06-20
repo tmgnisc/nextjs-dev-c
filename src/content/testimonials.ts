@@ -27,4 +27,25 @@ export const testimonials: Testimonial[] = [
     role: 'Founder, Summit Academy',
     avatar: '/images/avatars/author-3.jpg',
   },
+  {
+    quote:
+      'Our map-pack visibility tripled across twelve locations. Foot traffic followed within a quarter. Genuinely the best local SEO work we have seen.',
+    name: 'Rajesh Gurung',
+    role: 'Operations Director, Everest Hospitality',
+    avatar: '/images/avatars/author-1.jpg',
+  },
+  {
+    quote:
+      'They rebuilt our site on a modern stack and it loads instantly. Conversions are up 28% with no change to ad spend.',
+    name: 'Maya Lewis',
+    role: 'Head of Digital, CarePlus Clinics',
+    avatar: '/images/avatars/author-2.jpg',
+  },
+  {
+    quote:
+      'Honest, sharp, and relentless about results. The bi-weekly reporting alone changed how our leadership thinks about marketing.',
+    name: 'Tenzin Dorje',
+    role: 'CMO, Kathmandu Fintech',
+    avatar: '/images/avatars/author-3.jpg',
+  },
 ];

@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import ComingSoon from '@/components/sections/ComingSoon';
+import TeamMemberPage from '@/components/templates/TeamMemberPage';
+import { getMember } from '@/content/team';
 
-export const metadata: Metadata = { title: 'Ralph Edwards' };
+const member = getMember('ralph-edwards')!;
+
+export const metadata: Metadata = { title: member.name, description: `${member.name} — ${member.role} at Dev Community Nepal.` };
 
 export default function Page() {
-  return <ComingSoon title={'Ralph Edwards'} />;
+  return <TeamMemberPage member={member} />;
 }

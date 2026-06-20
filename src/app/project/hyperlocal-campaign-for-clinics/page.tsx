@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import ComingSoon from '@/components/sections/ComingSoon';
+import ProjectPage from '@/components/templates/ProjectPage';
+import { getProject } from '@/content/projects';
 
-export const metadata: Metadata = { title: 'Hyperlocal Campaign For Clinics' };
+const project = getProject('hyperlocal-campaign-for-clinics')!;
+
+export const metadata: Metadata = { title: project.title, description: project.summary };
 
 export default function Page() {
-  return <ComingSoon title={'Hyperlocal Campaign For Clinics'} />;
+  return <ProjectPage project={project} />;
 }

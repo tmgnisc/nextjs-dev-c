@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import ComingSoon from '@/components/sections/ComingSoon';
+import ServicePage from '@/components/templates/ServicePage';
+import { getService } from '@/content/services';
 
-export const metadata: Metadata = { title: 'Conversion Rate Optimization' };
+const service = getService('cro')!;
+
+export const metadata: Metadata = { title: service.title, description: service.summary };
 
 export default function Page() {
-  return <ComingSoon title={'Conversion Rate Optimization'} />;
+  return <ServicePage service={service} />;
 }

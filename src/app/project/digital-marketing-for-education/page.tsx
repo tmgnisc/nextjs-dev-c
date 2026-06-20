@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import ComingSoon from '@/components/sections/ComingSoon';
+import ProjectPage from '@/components/templates/ProjectPage';
+import { getProject } from '@/content/projects';
 
-export const metadata: Metadata = { title: 'Digital Marketing For Education' };
+const project = getProject('digital-marketing-for-education')!;
+
+export const metadata: Metadata = { title: project.title, description: project.summary };
 
 export default function Page() {
-  return <ComingSoon title={'Digital Marketing For Education'} />;
+  return <ProjectPage project={project} />;
 }

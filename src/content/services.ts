@@ -139,4 +139,24 @@ export const services: Service[] = [
   { slug: 'branding-identity', title: 'Branding & Identity', tagline: 'A brand worth remembering.', summary: 'Positioning, voice, and visual identity that make your brand distinct and durable.', icon: '🎨', features: [], faq: defaultFaq('branding'), image: '/images/services/branding.png' },
 ];
 
+// Give every service a complete feature set so each page renders a full layout.
+const genericFeatures = (title: string): Service['features'] => [
+  {
+    title: 'Audit & strategy',
+    body: `We start with a deep audit of your ${title.toLowerCase()} and build a prioritized roadmap tied to your goals.`,
+  },
+  {
+    title: 'Hands-on execution',
+    body: 'Our specialists implement the plan and iterate every two weeks based on real performance data.',
+  },
+  {
+    title: 'Transparent reporting',
+    body: 'Plain-English reporting against agreed baselines, so you always know what is working and why.',
+  },
+];
+
+for (const service of services) {
+  if (service.features.length === 0) service.features = genericFeatures(service.title);
+}
+
 export const getService = (slug: string) => services.find((s) => s.slug === slug);

@@ -1,8 +1,11 @@
 import type { Metadata } from 'next';
-import ComingSoon from '@/components/sections/ComingSoon';
+import ProjectPage from '@/components/templates/ProjectPage';
+import { getProject } from '@/content/projects';
 
-export const metadata: Metadata = { title: 'Organic Growth Acceleration' };
+const project = getProject('organic-growth-acceleration')!;
+
+export const metadata: Metadata = { title: project.title, description: project.summary };
 
 export default function Page() {
-  return <ComingSoon title={'Organic Growth Acceleration'} />;
+  return <ProjectPage project={project} />;
 }
