@@ -1,20 +1,26 @@
-'use client';
+import Link from 'next/link';
+import Container from '@/components/ui/Container';
+import Button from '@/components/ui/Button';
+import Nav from './Nav';
+import MobileMenu from './MobileMenu';
+import { site } from '@/content/site';
 
-import { usePathname } from 'next/navigation';
-import HEADER_HTML from './markup/header';
-
-/**
- * Site header (Elementor template 6095). The markup is stored once, neutral of
- * any active-nav state; the highlight for the current route is applied here so
- * a single component serves every page.
- */
 export default function Header() {
-  const pathname = usePathname();
-  // Header anchors use trailing slashes (`/about-us/`); home is just `/`.
-  const target = pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`;
-  const html = HEADER_HTML.replace(
-    `href="${target}" class="ekit-menu-nav-link"`,
-    `href="${target}" class="ekit-menu-nav-link active"`,
+  return (
+    <header className="sticky top-0 z-50 border-b border-line bg-ink/80 backdrop-blur-md">
+      <Container className="flex h-18 items-center justify-between py-4">
+        <Link href="/" className="font-display text-lg font-bold tracking-tight">
+          {site.name}
+        </Link>
+
+        <div className="flex items-center gap-6">
+          <Nav />
+          <div className="hidden md:block">
+            <Button href="/contact-us">Get Started</Button>
+          </div>
+          <MobileMenu />
+        </div>
+      </Container>
+    </header>
   );
-  return <div suppressHydrationWarning dangerouslySetInnerHTML={{ __html: html }} />;
 }
