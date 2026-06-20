@@ -1,8 +1,9 @@
-import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Section from '@/components/ui/Section';
 import Eyebrow from '@/components/ui/Eyebrow';
 import Heading from '@/components/ui/Heading';
+import Badge from '@/components/ui/Badge';
+import MemberPhoto from '@/components/ui/MemberPhoto';
 import CTASection from '@/components/sections/CTASection';
 import type { Member } from '@/content/team';
 
@@ -12,10 +13,13 @@ export default function TeamMemberPage({ member }: { member: Member }) {
       <Section>
         <Container className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="relative aspect-square overflow-hidden rounded-card border border-line">
-            <Image src={member.image} alt={member.name} fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 460px" />
+            <MemberPhoto member={member} sizes="(max-width: 1024px) 100vw, 460px" />
           </div>
           <div>
-            <Eyebrow>{member.role}</Eyebrow>
+            <div className="flex flex-wrap items-center gap-3">
+              <Eyebrow>{member.role}</Eyebrow>
+              <Badge>{member.department}</Badge>
+            </div>
             <Heading as="h1" className="mt-5">
               {member.name}
             </Heading>
