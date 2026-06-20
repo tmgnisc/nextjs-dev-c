@@ -1,37 +1,88 @@
-/* Global resets — theme CSS is loaded per-page via <link> tags */
-*, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; }
+@import "tailwindcss";
 
-/* Hide Services nav item */
-#menu-item-13377 { display: none !important; }
+/* ==========================================================================
+   Design tokens — Dev Community Nepal
+   Dark-navy canvas with a blue→gold gradient accent.
+   ========================================================================== */
+@theme {
+  --color-ink: #0e1419;
+  --color-surface: #161d24;
+  --color-surface-2: #1e2730;
+  --color-brand: #3d7eaa;
+  --color-brand-deep: #2c5d80;
+  --color-accent: #ffe47a;
+  --color-text: #f4f7fa;
+  --color-muted: #9db0bf;
+  --color-line: rgba(255, 255, 255, 0.1);
 
-/* Navbar CTA button — matches "Let's Grow Together" hero style */
-.elementor-element-faada8c .elementor-button {
-  background-color: transparent !important;
-  background-image: linear-gradient(90deg, #3D7EAA 0%, #FFE47A 100%) !important;
-  color: #121A1F !important;
-  border-radius: 100px !important;
-  padding: 16px 36px !important;
-  font-family: "Sora", sans-serif !important;
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  letter-spacing: 0 !important;
-  border: none !important;
-  white-space: nowrap;
-  transition: background-image 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease !important;
+  --radius-card: 22px;
+  --radius-pill: 100px;
+
+  --font-display: var(--font-sora);
+  --font-sans: var(--font-inter);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.elementor-element-faada8c .elementor-button:hover,
-.elementor-element-faada8c .elementor-button:focus {
-  background-color: transparent !important;
-  background-image: linear-gradient(90deg, #FFE47A 0%, #3D7EAA 100%) !important;
-  color: #121A1F !important;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(255, 228, 122, 0.35) !important;
-  text-decoration: none;
+/* ---- Base layer -------------------------------------------------------- */
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
 }
 
-.elementor-element-faada8c .elementor-button:focus-visible {
-  outline: 2px solid #FFE47A;
-  outline-offset: 3px;
+/* ---- Utilities --------------------------------------------------------- */
+@utility text-gradient {
+  background-image: linear-gradient(90deg, var(--color-brand), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-brand-gradient {
+  background-image: linear-gradient(90deg, var(--color-brand) 0%, var(--color-accent) 100%);
+}
+
+/* Marquee used by the services strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
