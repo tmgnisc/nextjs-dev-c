@@ -1,26 +1,37 @@
-@import "tailwindcss";
+/* Global resets — theme CSS is loaded per-page via <link> tags */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Hide Services nav item */
+#menu-item-13377 { display: none !important; }
+
+/* Navbar CTA button — matches "Let's Grow Together" hero style */
+.elementor-element-faada8c .elementor-button {
+  background-color: transparent !important;
+  background-image: linear-gradient(90deg, #3D7EAA 0%, #FFE47A 100%) !important;
+  color: #121A1F !important;
+  border-radius: 100px !important;
+  padding: 16px 36px !important;
+  font-family: "Sora", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  letter-spacing: 0 !important;
+  border: none !important;
+  white-space: nowrap;
+  transition: background-image 0.28s ease, transform 0.28s ease, box-shadow 0.28s ease !important;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.elementor-element-faada8c .elementor-button:hover,
+.elementor-element-faada8c .elementor-button:focus {
+  background-color: transparent !important;
+  background-image: linear-gradient(90deg, #FFE47A 0%, #3D7EAA 100%) !important;
+  color: #121A1F !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255, 228, 122, 0.35) !important;
+  text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.elementor-element-faada8c .elementor-button:focus-visible {
+  outline: 2px solid #FFE47A;
+  outline-offset: 3px;
 }
