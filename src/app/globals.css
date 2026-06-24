@@ -2,25 +2,39 @@
 
 /* ==========================================================================
    Design tokens — Dev Community Nepal
-   Dark-navy canvas with a blue→gold gradient accent.
+   Exact logo colors: #f91515 (Red), #5a5a5a (Grey), #000000 (Black)
    ========================================================================== */
 @theme {
-  --color-ink: #0e1419;
-  --color-surface: #161d24;
-  --color-surface-2: #1e2730;
-  --color-brand: #3d7eaa;
-  --color-brand-deep: #2c5d80;
-  --color-accent: #ffe47a;
-  --color-text: #f4f7fa;
-  --color-muted: #9db0bf;
-  --color-line: rgba(255, 255, 255, 0.1);
+  /* Core palette - Pure black background */
+  --color-ink: #000000;
+  --color-surface: #0a0a0a;
+  --color-surface-2: #111111;
 
-  --radius-card: 22px;
-  --radius-pill: 100px;
+  /* Brand Red - Exact from logo */
+  --color-brand: #f91515;
+  --color-brand-deep: #d40f12;
+  --color-accent: #ff2d2d;
 
+  /* Subtle Hero Background - Very dark with minimal red tint */
+  --color-hero: #0f0000;
+  --color-hero-subtle: #140202;
+
+  /* Typography */
+  --color-text: #ffffff;
+  --color-muted: #5a5a5a;           /* Exact grey from logo for "</>" and muted text */
+
+  /* Borders / Lines */
+  --color-line: rgba(255, 255, 255, 0.08);
+
+  /* Rounded corners */
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+
+  /* Fonts */
   --font-display: var(--font-sora);
   --font-sans: var(--font-inter);
 
+  /* Easing */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -67,6 +81,15 @@
 
 @utility bg-brand-gradient {
   background-image: linear-gradient(90deg, var(--color-brand) 0%, var(--color-accent) 100%);
+}
+
+/* Hero Background Utilities */
+@utility bg-hero {
+  background-color: var(--color-hero);
+}
+
+@utility bg-hero-subtle {
+  background: linear-gradient(180deg, var(--color-hero) 0%, var(--color-hero-subtle) 100%);
 }
 
 /* Marquee used by the services strip */
