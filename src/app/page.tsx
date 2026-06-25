@@ -1,12 +1,9 @@
 import Hero from '@/components/sections/Hero';
 import ServicesMarquee from '@/components/sections/ServicesMarquee';
 import StatsBand from '@/components/sections/StatsBand';
-import FeatureGrid from '@/components/sections/FeatureGrid';
 import ServiceList from '@/components/sections/ServiceList';
-import Testimonials from '@/components/sections/Testimonials';
-import CTASection from '@/components/sections/CTASection';
-import { services } from '@/content/services';
-import { testimonials } from '@/content/testimonials';
+import EventsSection from '@/components/sections/EventsSection';
+import PartnersSection from '@/components/sections/PartnersSection';
 import { site } from '@/content/site';
 
 export default function Home() {
@@ -27,29 +24,54 @@ export default function Home() {
       <div className="pt-20 md:pt-28">
         <StatsBand
           stats={[
-            { value: '12+', label: 'Years in search' },
-            { value: '180+', label: 'Projects shipped' },
-            { value: '3.4x', label: 'Avg. return on retainer' },
-            { value: '96%', label: 'Client retention' },
+            { value: '5+', label: 'Tech Meetup' },
+            { value: '150+', label: 'Workshops and Training' },
+            { value: '100+', label: 'Partnerships' },
+            { value: '2021', label: 'Founded' },
           ]}
         />
       </div>
 
-      <FeatureGrid
-        eyebrow="Why Dev Community Nepal"
-        title="A growth partner, not a vendor"
-        items={[
-          { icon: '🧭', title: 'Strategy first', body: 'We start with your goals and economics, then build the plan that gets there — no cookie-cutter playbooks.' },
-          { icon: '📈', title: 'Measurable outcomes', body: 'Clean tracking and honest reporting, so you always know what’s working and why.' },
-          { icon: '🤝', title: 'An extension of your team', body: 'We work inside your tools and cadence, sharing context instead of hiding behind a black box.' },
+      <ServiceList
+        eyebrow="What we do"
+        title="Our Programs & Initiatives"
+        services={[
+          {
+            slug: '',
+            title: 'WORKSHOPS',
+            summary: 'DEV Community Nepal organizes several personal and professional workshops throughout the calendar year. The workshops are intended to provide technical as well as market-related knowledge.',
+            icon: '🛠️',
+            tagline: '',
+            features: [],
+            faq: [],
+            image: '',
+          },
+          {
+            slug: '',
+            title: 'HACKATHON',
+            summary: '"DevFest" is the hackathon competition organized by DEV Community Nepal. In the past we have conducted couple of hackathons successfully. It is one of the grand events of the year.',
+            icon: '💻',
+            tagline: '',
+            features: [],
+            faq: [],
+            image: '',
+          },
+          {
+            slug: '',
+            title: 'SOCIAL IMPACT',
+            summary: 'DEV Community Nepal not only tries to uplift the students pursuing technology, but also strives to create an impact on the society through various awareness programs, as our responsibility towards our nation',
+            icon: '🌍',
+            tagline: '',
+            features: [],
+            faq: [],
+            image: '',
+          },
         ]}
       />
 
-      <ServiceList services={services.slice(0, 6)} />
+      <EventsSection />
 
-      <Testimonials items={testimonials} />
-
-      <CTASection />
+      <PartnersSection />
     </>
   );
 }

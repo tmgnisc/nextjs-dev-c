@@ -28,12 +28,12 @@ export const site: Site = {
   ],
   footerColumns: [
     {
-      title: 'Services',
+      title: 'Events',
       links: [
-        { label: 'SEO', href: '/seo' },
-        { label: 'Google Ads', href: '/google-ads' },
-        { label: 'Content Marketing', href: '/content-marketing' },
-        { label: 'Web Development', href: '/website-development' },
+        { label: 'Notion Workshop', href: '/events' },
+        { label: 'Digital Marketing', href: '/events' },
+        { label: 'Skill Sharing', href: '/events' },
+        { label: 'Steam Expo', href: '/events' },
       ],
     },
     {
@@ -41,7 +41,7 @@ export const site: Site = {
       links: [
         { label: 'About', href: '/about-us' },
         { label: 'Team', href: '/our-team' },
-        { label: 'Work', href: '/services' },
+        { label: 'Events', href: '/events' },
         { label: 'Blog', href: '/blog' },
       ],
     },
