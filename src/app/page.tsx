@@ -11,12 +11,12 @@ export default function Home() {
     <>
       <Hero
         eyebrow={site.tagline}
-        title="We grow brands with"
-        highlight="search, data, and code."
+        title="Where talent and community"
+        highlight="engagement meet."
         subtitle={site.description}
-        cta={{ label: 'Start a project', href: '/contact-us' }}
-        secondaryCta={{ label: 'See our work', href: '/services' }}
-        image="/images/hero.png"
+        cta={{ label: 'Join Community', href: '/contact-us' }}
+        secondaryCta={{ label: 'Our Vision', href: '/services' }}
+        image="/images/team/s8.jpg"
       />
 
       <ServicesMarquee items={['SEO', 'PPC', 'Content Marketing', 'Data & Analytics', 'CRO', 'Web Development']} />

@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button';
 export default function CTASection({
   title = 'Ready to grow?',
   body = 'Tell us your goals and we’ll come back with a plan — not a pitch.',
-  cta = { label: 'Start a project', href: '/contact-us' },
+  cta = { label: 'Join Us', href: '/contact-us' },
 }: {
   title?: string;
   body?: string;

@@ -24,13 +24,9 @@ export default function ServiceList({
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => {
             const isLink = !!s.slug;
-            const CardWrapper = isLink ? Link : 'div';
-            return (
-              <CardWrapper
-                key={s.slug || s.title}
-                href={isLink ? `/${s.slug}` : undefined}
-                className="group rounded-card border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40"
-              >
+            const className = "group rounded-card border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40";
+            const cardContent = (
+              <>
                 <div className="text-3xl">{s.icon}</div>
                 <h3 className="mt-4 text-lg font-semibold text-text">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{s.summary}</p>
@@ -40,7 +36,21 @@ export default function ServiceList({
                     <span className="transition-transform group-hover:translate-x-1">→</span>
                   </span>
                 )}
-              </CardWrapper>
+              </>
+            );
+
+            if (isLink) {
+              return (
+                <Link key={s.slug} href={`/${s.slug}`} className={className}>
+                  {cardContent}
+                </Link>
+              );
+            }
+
+            return (
+              <div key={s.title} className={className}>
+                {cardContent}
+              </div>
             );
           })}
         </div>

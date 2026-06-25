@@ -28,7 +28,7 @@ function LeadCard({ member }: { member: Member }) {
 export default function TeamGrid({
   members,
   eyebrow = 'The team',
-  title = 'People behind the work',
+  title = 'People behind the Team',
 }: {
   members: Member[];
   eyebrow?: string;
