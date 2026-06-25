@@ -22,21 +22,37 @@ export default function ServiceList({
           <Heading className="mt-5">{title}</Heading>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <Link
-              key={s.slug}
-              href={`/${s.slug}`}
-              className="group rounded-card border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40"
-            >
-              <div className="text-3xl">{s.icon}</div>
-              <h3 className="mt-4 text-lg font-semibold text-text">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{s.summary}</p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
-                Learn more
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </span>
-            </Link>
-          ))}
+          {services.map((s) => {
+            const isLink = !!s.slug;
+            const className = "group rounded-card border border-line bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40";
+            const cardContent = (
+              <>
+                <div className="text-3xl">{s.icon}</div>
+                <h3 className="mt-4 text-lg font-semibold text-text">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{s.summary}</p>
+                {isLink && (
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
+                    Learn more
+                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                  </span>
+                )}
+              </>
+            );
+
+            if (isLink) {
+              return (
+                <Link key={s.slug} href={`/${s.slug}`} className={className}>
+                  {cardContent}
+                </Link>
+              );
+            }
+
+            return (
+              <div key={s.title} className={className}>
+                {cardContent}
+              </div>
+            );
+          })}
         </div>
       </Container>
     </Section>

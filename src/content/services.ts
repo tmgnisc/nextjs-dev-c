@@ -59,8 +59,8 @@ export const services: Service[] = [
     image: '/images/services/seo.png',
   },
   {
-    slug: 'ppc',
-    title: 'PPC & Paid Media',
+    slug: 'hackathon',
+    title: 'Hackathon',
     tagline: 'Profitable clicks, not just clicks.',
     summary: 'Full-funnel paid search and social that scales spend only as fast as it stays profitable.',
     icon: '🎯',
@@ -73,8 +73,8 @@ export const services: Service[] = [
     image: '/images/services/ppc.png',
   },
   {
-    slug: 'content-marketing',
-    title: 'Content Marketing',
+    slug: 'Partnership',
+    title: 'Partnership',
     tagline: 'Content with a job to do.',
     summary: 'Editorial strategy and production that earns trust, ranks, and moves prospects toward a decision.',
     icon: '✍️',

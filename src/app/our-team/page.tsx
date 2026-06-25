@@ -34,7 +34,7 @@ export default function TeamPage() {
 
       <TeamGrid members={team} eyebrow="Leadership" title="Meet the team" />
 
-      <CTASection title="Want to work with us?" body="We’re always looking for sharp people and great clients." />
+      <CTASection title="Let's Build Together" body="Become part of a community that turns ideas into reality." />
     </>
   );
 }

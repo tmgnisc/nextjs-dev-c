@@ -1,14 +1,4 @@
-import type { Metadata } from 'next';
-import TeamMemberPage from '@/components/templates/TeamMemberPage';
-import { getMember } from '@/content/team';
+import Page, { metadata as sushantMetadata } from '../sushant-rimal/page';
 
-const member = getMember('sarah-mitchell')!;
-
-export const metadata: Metadata = {
-  title: member.name,
-  description: `${member.name} — ${member.role} at Dev Community Nepal.`,
-};
-
-export default function Page() {
-  return <TeamMemberPage member={member} />;
-}
+export const metadata = sushantMetadata;
+export default Page;

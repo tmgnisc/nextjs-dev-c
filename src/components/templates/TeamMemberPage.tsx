@@ -25,19 +25,21 @@ export default function TeamMemberPage({ member }: { member: Member }) {
             </Heading>
             <p className="mt-6 text-lg leading-relaxed text-muted">{member.bio}</p>
 
-            <div className="mt-10 space-y-5">
-              {member.skills.map((skill) => (
-                <div key={skill.label}>
-                  <div className="mb-1.5 flex justify-between text-sm">
-                    <span className="font-medium text-text">{skill.label}</span>
-                    <span className="text-muted">{skill.level}%</span>
+            {member.skills && member.skills.length > 0 && (
+              <div className="mt-10 space-y-5">
+                {member.skills.map((skill) => (
+                  <div key={skill.label}>
+                    <div className="mb-1.5 flex justify-between text-sm">
+                      <span className="font-medium text-text">{skill.label}</span>
+                      <span className="text-muted">{skill.level}%</span>
+                    </div>
+                    <div className="h-2 overflow-hidden rounded-pill bg-surface-2">
+                      <div className="bg-brand-gradient h-full rounded-pill" style={{ width: `${skill.level}%` }} />
+                    </div>
                   </div>
-                  <div className="h-2 overflow-hidden rounded-pill bg-surface-2">
-                    <div className="bg-brand-gradient h-full rounded-pill" style={{ width: `${skill.level}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             <div className="mt-8 flex gap-3">
               {member.socials.map((s) => (

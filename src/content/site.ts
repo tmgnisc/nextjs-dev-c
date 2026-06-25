@@ -14,43 +14,35 @@ export type Site = {
 
 export const site: Site = {
   name: 'Dev Community Nepal',
-  tagline: 'Digital growth, engineered.',
+  tagline: 'COLLABORATE & INNOVATE.',
   description:
-    'Dev Community Nepal is a Kathmandu-based digital growth studio. We help brands rank, convert, and scale with SEO, paid media, content, and web engineering.',
-  email: 'hello@devcommunitynepal.com',
-  phone: '+977 98-0000-0000',
-  address: 'Jhamsikhel, Lalitpur, Kathmandu, Nepal',
+    "Whether you are a student looking to upskill, a youth eager to contribute, or a company seeking talent, DEV Community Nepal is here to strengthen Nepal’s tech future together.",
+  email: 'info@devcommunitynepal.com',
+  phone: '+977 9869724290',
+  address: 'Kathmandu, Nepal',
   socials: [
-    { label: 'LinkedIn', href: 'https://linkedin.com' },
-    { label: 'X', href: 'https://x.com' },
-    { label: 'GitHub', href: 'https://github.com' },
-    { label: 'Instagram', href: 'https://instagram.com' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/devcommunitynepal/' },
+    { label: 'Facebook', href: 'https://www.facebook.com/share/1BpMn5Td6N/' },
+    { label: 'Instagram', href: 'https://www.instagram.com/devcommunitynepal?igsh=MTRyZmNiY3FqdnpnbQ==' },
+    { label: 'YouTube', href: 'https://youtube.com' },
   ],
   footerColumns: [
     {
-      title: 'Services',
+      title: 'Quick Links',
       links: [
-        { label: 'SEO', href: '/seo' },
-        { label: 'Google Ads', href: '/google-ads' },
-        { label: 'Content Marketing', href: '/content-marketing' },
-        { label: 'Web Development', href: '/website-development' },
+        { label: 'About Us', href: '/about-us' },
+        { label: 'Events', href: '/events' },
+        { label: 'Our Impact', href: '/about-us' },
+        { label: 'Register', href: '/contact-us' },
       ],
     },
     {
-      title: 'Company',
+      title: 'Resources',
       links: [
-        { label: 'About', href: '/about-us' },
-        { label: 'Team', href: '/our-team' },
-        { label: 'Work', href: '/services' },
-        { label: 'Blog', href: '/blog' },
-      ],
-    },
-    {
-      title: 'Get in touch',
-      links: [
-        { label: 'Contact', href: '/contact-us' },
-        { label: 'Pricing', href: '/pricing-plan' },
-        { label: 'FAQs', href: '/faqs' },
+        { label: 'Notion Workshop', href: '/events' },
+        { label: 'Digital Marketing', href: '/events' },
+        { label: 'Skill Sharing', href: '/events' },
+        { label: 'Steam Expo', href: '/events' },
       ],
     },
   ],
