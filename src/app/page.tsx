@@ -19,7 +19,7 @@ export default function Home() {
         image="/images/team/s8.jpg"
       />
 
-      <ServicesMarquee items={['SEO', 'PPC', 'Content Marketing', 'Data & Analytics', 'CRO', 'Web Development']} />
+      <ServicesMarquee items={['Hackathon', 'Events', 'Innovation', 'mentoships', 'meetups']} />
 
       <div className="pt-20 md:pt-28">
         <StatsBand
