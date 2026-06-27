@@ -21,7 +21,7 @@ export default function AboutPage() {
         highlight="proven by results."
         subtitle="We’re a Kathmandu-based team of strategists, engineers, and storytellers who help brands turn search and paid channels into dependable growth."
         cta={{ label: 'Work with us', href: '/contact-us' }}
-        image="/images/about.png"
+        image="/images/team/national team.jpeg"
       />
 
       <div className="pb-4">

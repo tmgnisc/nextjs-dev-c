@@ -1,8 +1,10 @@
+"use client";
 import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Heading from '@/components/ui/Heading';
 import Eyebrow from '@/components/ui/Eyebrow';
 import Button from '@/components/ui/Button';
+import { useState } from 'react';
 
 type Cta = { label: string; href: string };
 
@@ -23,6 +25,13 @@ export default function Hero({
   secondaryCta?: Cta;
   image?: string;
 }) {
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handleImageClick = () => {
+    setIsPressed(true);
+    setTimeout(() => setIsPressed(false), 150);
+  };
+
   return (
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[480px] w-[820px] -translate-x-1/2 rounded-full bg-brand/20 blur-[120px]" />
@@ -47,7 +56,11 @@ export default function Hero({
         </div>
 
         {image && (
-          <div className="relative aspect-[4/3] overflow-hidden rounded-card border border-line">
+          <div
+            className={`relative aspect-[4/3] overflow-hidden rounded-card border border-line ${isPressed ? 'scale-95' : ''}`}
+            style={{ cursor: 'pointer', transition: 'transform 0.15s' }}
+            onClick={handleImageClick}
+          >
             <Image src={image} alt="" fill className="object-cover" priority sizes="(max-width: 1024px) 100vw, 600px" />
           </div>
         )}
