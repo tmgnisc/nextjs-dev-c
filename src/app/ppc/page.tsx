@@ -1,11 +1,19 @@
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import ServicePage from '@/components/templates/ServicePage';
 import { getService } from '@/content/services';
 
-const service = getService('ppc')!;
+// Use the updated slug for the service (formerly 'ppc')
+const service = getService('hackathon');
 
-export const metadata: Metadata = { title: service.title, description: service.summary };
+export const metadata: Metadata = {
+  title: service?.title ?? 'Hackathon',
+  description: service?.summary ?? 'Hackathon services',
+};
 
 export default function Page() {
-  return <ServicePage service={service} />;
+  if (!service) {
+    notFound();
+  }
+  return <ServicePage service={service!} />;
 }
